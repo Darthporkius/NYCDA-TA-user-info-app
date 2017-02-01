@@ -7,7 +7,7 @@ router.get('/', (request, response) => {
 });
 
 router.post('/', (request, reponse) => {
-  reponse.redirect('/search/' request.body.query);
+  reponse.redirect('/search/' + request.body.query);
 });
 
 router.get('/:query', (request, response) => {
