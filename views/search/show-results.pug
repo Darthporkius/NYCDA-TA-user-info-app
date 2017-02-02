@@ -5,11 +5,9 @@ block content
     h1 Search Results:
 
     if results
-      each result in results
+      each user in results
         .card.card-block
-          h4(class="card-title")= result.firstname " " result.lastname
-          p(class="card-text")= "Email: " result.email
+          h4(class="card-title")= user.firstname + " " + user.lastname
+          p(class="card-text")= "Email: " + user.email
     else
       h4 User is not found
-
-      
