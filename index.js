@@ -1,12 +1,12 @@
 //you use this kind of notacion to generate
 //variabels in a group. You don't need to keep
 //writing var.
-var express = require('express'),
+const express = require('express'),
      bodyParser = require('body-parser'),
      pug = require('pug'),
      searchRoutes = require('./routes/search');
 
-var app = express(),
+const app = express(),
     userStore = require('./user-reader');
 
 //this sets the layout of the webpage.
