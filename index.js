@@ -11,7 +11,14 @@ const userRoutes = require('./routes/users'),
 const app = express();
 		userStore = require('./user-reader');
 
-var likeStore = JSON.parse(fs.readFileSync('likes.json'));
+var likeStore;  
+fs.readFile('likes.json', function (error, data){
+	if (error) {
+		throw error;
+	} else {
+		likeStore = (JSON.parse(data));
+	}
+});
 
 app.use(express.static('public'));
 
