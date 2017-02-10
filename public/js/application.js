@@ -1,5 +1,8 @@
 
-
+//To do the onetime press you can use the if statement or 
+//you can write this in line 6
+//$('#search-button input').one('keyup', function() {
+//Your write one instead of on. The handeler is executed at least once.
 $('#search-button input').on('keyup', function() {
   var query = $('#search-button input').val();
   console.log($('#search-button input').val());
