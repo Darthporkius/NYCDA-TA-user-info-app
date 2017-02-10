@@ -42,6 +42,7 @@ app.get('/api/search/*', (req, res) => {
 app.post('/like', (request, response) => {
 	likeStore.likeCount = likeStore.likeCount + 1;
 //what is likeCount?
+//likeCount is the object in the likes.json file.
 	response.json(likeStore);
 
 	fs.writeFile('likes.json', JSON.stringify(likeStore), (error, data) => {
