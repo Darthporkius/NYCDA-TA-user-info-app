@@ -24,7 +24,8 @@ var likeclicked = false;
 
 //The if statement here will prevent the user from liking more then
 //once. Upon refresh the user will be able to like the site again.
-//Need cookies to do it properly.
+//Need cookies to do it properly or better yet the server should prevent
+//should remmber that the page was liked by the user.
 $('.jl-like-button').on('click', function() {
   if (likeclicked == false) {
   $.post('/like', function(data) {
