@@ -66,7 +66,7 @@ app.post('/like', (request, response) => {
 			throw error;
 		}
 
-		console.log('new likeCount added to likes.json');
+		console.log('new attempt to add a likeCount to likes.json');
 	});
 });
 /////
