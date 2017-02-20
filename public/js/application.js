@@ -20,21 +20,32 @@ $('#search-button input').on('keyup', function() {
     }
   });
 
-var likeclicked = false;
 
 //The if statement here will prevent the user from liking more then
 //once. Upon refresh the user will be able to like the site again.
 //Need cookies to do it properly or better yet the server should prevent
 //should remmber that the page was liked by the user.
+// var likeclicked = false;
+// $('.jl-like-button').on('click', function() {
+//   if (likeclicked == false) {
+//   $.post('/like', function(data) {
+//     $('.jl-like-button').text('LIKES: ' + data.likeCount);
+//     console.log(data.likeCount);
+//     console.log('like finished');
+//     likeclicked = true;
+//   });
+//   } else {
+//     console.log('User has already liked the site.');
+//   }
+// });
+//A better way to limit the addition of like is written in the 
+//index.js by saving a true and false in the likes.json file.
+
+
 $('.jl-like-button').on('click', function() {
-  if (likeclicked == false) {
   $.post('/like', function(data) {
     $('.jl-like-button').text('LIKES: ' + data.likeCount);
     console.log(data.likeCount);
     console.log('like finished');
-    likeclicked = true;
   });
-  } else {
-    console.log('User has already liked the site.');
-  }
 });

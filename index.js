@@ -47,9 +47,18 @@ app.get('/api/search/*', (req, res) => {
 
 ////this adds a like and stores it in the likes.json
 app.post('/like', (request, response) => {
+	//The following if statement checks if the clicked
+	//property in the likes.json file is false. If it is,
+	//a like will be added to the json file and the 
+	//clicked property will be changed to true so another
+	//like can not be added.
+	if(!likeStore.clicked){
 	likeStore.likeCount = likeStore.likeCount + 1;
+	likeStore.clicked = true;
 //what is likeCount?
 //likeCount is the object in the likes.json file.
+	}
+
 	response.json(likeStore);
 
 	fs.writeFile('likes.json', JSON.stringify(likeStore), (error, data) => {

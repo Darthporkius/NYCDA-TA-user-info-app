@@ -5,8 +5,9 @@ var users;
   fs.readFile('users.json', function (error, data) {
       if (error) {
         throw error;
+      } else{
+        users = (JSON.parse(data))
       }
-      users = (JSON.parse(data))
     } 
   );
 
